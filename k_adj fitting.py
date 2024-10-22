@@ -4,17 +4,6 @@ import math
 import pandas as pd 
 from scipy.optimize import curve_fit
 
-# 获取当前工作目录
-#current_dir = os.getcwd()
-#print("当前工作目录：", current_dir)
-
-# 设置当前工作目录
-#new_dir = "D:\Desktop\code\Python"
-#os.chdir(new_dir)
-
-# 再次获取当前工作目录
-#updated_dir = os.getcwd()
-#print("更新后的工作目录：", updated_dir)
 
 #定义函数,T为Total
 def func1(x,k1):

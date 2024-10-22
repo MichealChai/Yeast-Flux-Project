@@ -67,7 +67,6 @@ while i < col+1:
     bounds = ([popt1[0] , 0] , [popt1[0]+0.00001 , np.inf])                                                            #固定上游代谢物的k value,并用其计算下游代谢物的k value
     popt2, pcov2 = curve_fit(func1, ms_mtx['time(h)'] , ms_mtx.iloc[:,2*i+1] , maxfev = 1000000 , method = 'lm')
     popt3, pcov3 = curve_fit(func2, ms_mtx['time(h)'] , ms_mtx.iloc[:,2*i+1] , bounds = bounds , maxfev = 1000000)
-    print(pcov1,'\n',pcov2,'\n',pcov3)
     calc = pd.DataFrame([popt1[0] , popt2[0] , popt3[1]])
     head_k.append((head_m_s[2*i-1,0] , head_m_s[2*i+1,0]))
     k_value = pd.concat([k_value , calc] , axis = 1)

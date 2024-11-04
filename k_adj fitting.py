@@ -61,5 +61,5 @@ while i < col+1:
     k_value = pd.concat([k_value , calc] , axis = 1)
     i += 2
 k_value.columns = pd.MultiIndex.from_tuples(head_k)
-k_value.rename(index={0:"k_for" , 1:"k_lat_ori" , 2:"k_lat_cor"} , inplace = True)              #k_for:k_value_former   k_lat_ori:k_value_latter_original   k_lat_cor:k_value_latter_correctional
+k_value.rename(index={0:"k_um" , 1:"k_dm_ori" , 2:"k_dm_adj"} , inplace = True)              #k_um:k_value of upstream metabolite   k_dm_ori:original k_value of downstream metabolite   k_dm_adj:k_value of downstream metabolite after adjustment
 k_value.to_csv('real_k_value.csv' , sep=',' , index=True,header=True)
